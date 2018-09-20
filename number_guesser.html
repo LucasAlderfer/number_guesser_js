@@ -1,0 +1,96 @@
+<h3>Your Last Guess Was:</h3>
+<p id='last-guess'></p>
+<p id='evaluation'></p>
+
+<h3>Range</h3>
+<p id='max'></p>
+<p id='min'></p>
+<form id='set-min-max'>
+  <input id='max-enter' type='text' name='New Max' value='New Max'>
+  <input id='min-enter' type='text' name='New Min' value='New Min'>
+  <input type='button' onclick="setRange()" value='Set New Range'>
+</form>
+
+<form id='number-guesser'>
+  <h3>Guess Number</h3>
+  <input id='guess' type='text' name='guess'>
+  <input type='button' onclick="myFunction()" value='Submit a Guess'>
+  <input id='soft-reset' type='reset'>
+</form>
+<form action="file:///Users/lucasdevelopment/turing/4module/number_guesser/number_guesser.html" target="_self">
+  <input id='hard-reset' type='submit' value='Reset the Game'>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+  let max = 100
+  let min = 0
+  document.getElementById('max').innerHTML = max;
+  document.getElementById('min').innerHTML = min;
+  let number = Math.floor(Math.random() * (max - min)) + min;
+  function setRange() {
+    var maxtext = document.getElementById('set-min-max');
+    var mintext = document.getElementById('set-min-max');
+    max = "";
+    var i;
+    for (i = 0; i < maxtext.length -2 ; i++) {
+      max += maxtext.elements[i].value;
+    }
+    min = "";
+    var n;
+    for (n = 1; n < mintext.length -1 ; n++) {
+      min += mintext.elements[n].value;
+    }
+    document.getElementById('max').innerHTML = parseInt(max);
+    document.getElementById('min').innerHTML = parseInt(min);
+    number = Math.floor(Math.random() * (parseInt(max) - parseInt(min))) + parseInt(min);
+  }
+  document.getElementById("hard-reset").disabled = true;
+  $(document).ready(function() {
+    $('#soft-reset').attr('disabled',true);
+    $('#guess').keyup(function(){
+      if ($(this).val().length !=0)
+        $('#soft-reset').attr('disabled',false);
+      else
+        $('#soft-reset').attr('disabled',true);
+    })
+  });
+  function myFunction() {
+    var x = document.getElementById('number-guesser');
+    var text = "";
+    var i;
+    for (i = 0; i < x.length -2 ; i++) {
+      text += x.elements[i].value;
+    }
+    document.getElementById('last-guess').innerHTML = text;
+    compare(text, number, min, max)
+    document.getElementById("hard-reset").disabled = false;
+  }
+  function compare(a, b, min, max) {
+    if (isNaN(parseInt(a))) {
+      alert('Not a Number!')
+      document.getElementById('evaluation').innerHTML = 'That is not a number'
+    }
+    else if (parseInt(a) < min) {
+      alert(`Number cannot be less than ${min}`)
+    }
+    else if (parseInt(a) > max) {
+      alert(`Number cannot be above ${max}`)
+    }
+    else if (parseInt(a) < b) {
+      document.getElementById('evaluation').innerHTML = 'That is too low'
+    }
+    else if (parseInt(a) > b) {
+      document.getElementById('evaluation').innerHTML = 'That is too high'
+    }
+    else {
+      document.getElementById('evaluation').innerHTML = 'BOOM!'
+      alert('CORRECT! Number and Range has changed!')
+      max = parseInt(max) + 10
+      min = parseInt(min) - 10
+      number = Math.floor(Math.random() * (max - min)) + min
+      document.getElementById('max').innerHTML = parseInt(max)
+      document.getElementById('min').innerHTML = parseInt(min)
+    }
+  }
+</script>

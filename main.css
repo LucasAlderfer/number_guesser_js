@@ -1,0 +1,150 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-header {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  background-color: #404041;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  padding-left: 0;
+}
+
+.main-header h1 {
+  display: inline;
+  font-weight: 300;
+  color: #E6E7E8;
+}
+
+.main-header h1:first-child {
+  font-weight: bold;
+  color: #ED458B;
+}
+
+.guess-reset {
+}
+
+#number-guesser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#number-guesser input {
+  font-weight: 300;
+  color: #D0D2D3;
+}
+
+#number-guesser input:first-child {
+  align-self: center;
+  width: 50vw;
+  margin-top: 3vh;
+  height: 3vh;
+  font-size: 2vh;
+}
+
+#number-guesser input[type=button] {
+  border-radius: 50px;
+  width: 25vw;
+  height: 3vh;
+  margin-top: 3vh;
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+#number-guesser input[type=reset] {
+  border-radius: 50px;
+  width: 25vw;
+  height: 3vh;
+  font-size: 2vh;
+  margin-top: 3vh;
+  background-color: #929497;
+  color: #FFFFFF;
+  margin-left: 1vw;
+}
+
+.guessing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #404041;
+  font-weight: 300;
+}
+
+#last-guess-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#last-guess {
+  color: #EB008B;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20vh;
+  font-weight: 100;
+}
+
+#evaluation {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#hard-reset {
+  border-radius: 50px;
+  background-color: #929497;
+  color: #FFFFFF;
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+}
+
+.range-setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #404041;
+  font-weight: 300;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+#set-min-max {
+  display: flex;
+  flex-direction: column;
+}
+
+#set-min-max input{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #D0D2D3;
+}
+
+#set-min-max input[type=button] {
+  border-radius: 50px;
+  width: 25vw;
+  height: 3vh;
+  margin-top: 1vh;
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+#range-heading {
+  margin: 0;
+  color: #404041;
+  font-weight: 300;
+  text-align: center;
+}
+
+#max {
+  margin: 0;
+}
+
+#min {
+  margin: 0;
+}

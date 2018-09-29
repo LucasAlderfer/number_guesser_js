@@ -1,0 +1,19 @@
+{
+  "name": "number_guesser",
+  "version": "1.0.0",
+  "description": "Number Guesser",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasAlderfer/number_guesser_js.git"
+  },
+  "author": "Lucas Alderfer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasAlderfer/number_guesser_js/issues"
+  },
+  "homepage": "https://github.com/LucasAlderfer/number_guesser_js#readme"
+}
